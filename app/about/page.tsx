@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ADDRESS } from "@/lib/contact";
 
 export const metadata: Metadata = {
@@ -60,6 +61,41 @@ export default function AboutPage() {
               Head Office
             </p>
             <p className="mt-2 break-words font-serif text-xl">{ADDRESS}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="bg-cream-deep">
+        <div className="mx-auto max-w-4xl px-6 py-20 sm:px-10">
+          <h2 className="font-serif text-2xl">Leadership</h2>
+
+          <div className="mt-10 grid items-start gap-10 sm:grid-cols-[160px_1fr]">
+            <div className="mx-auto w-32 overflow-hidden rounded-sm sm:mx-0 sm:w-full">
+              <Image
+                src="/team/ceo.jpg"
+                alt="Dorcas Folashade Aleyomi, Founder and Chief Executive Officer of Aspirio Limited"
+                width={400}
+                height={460}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+
+            <div>
+              <h3 className="font-serif text-xl">Dorcas Folashade Aleyomi</h3>
+              <p className="mt-1 text-xs font-medium uppercase tracking-widest text-gold-deep">
+                Founder &amp; Chief Executive Officer
+              </p>
+              <p className="mt-5 text-sm leading-relaxed text-ink/75">
+                Dorcas Folashade Aleyomi founded Aspirio Limited in 2015
+                and has led the company from a single venture into two
+                operating divisions spanning real estate and medical
+                equipment supply. Under her leadership, Aspirio has built
+                its reputation on a standard that is simple to state and
+                harder to keep: do exactly what you said you would do,
+                for every client, every time.
+              </p>
+            </div>
           </div>
         </div>
       </section>

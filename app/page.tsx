@@ -101,10 +101,7 @@ export default function Home() {
 
       {/* Divisions */}
       <section className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
-        <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-deep">
-          What We Do
-        </p>
-        <h2 className="mt-3 max-w-xl font-serif text-3xl sm:text-4xl">
+        <h2 className="max-w-xl font-serif text-3xl sm:text-4xl">
           Two moments in life where getting it wrong costs the most.
         </h2>
 
@@ -190,10 +187,7 @@ export default function Home() {
       {/* Why Aspirio */}
       <section className="bg-cream-deep">
         <div className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-deep">
-            Why Aspirio
-          </p>
-          <h2 className="mt-3 max-w-xl font-serif text-3xl sm:text-4xl">
+          <h2 className="max-w-xl font-serif text-3xl sm:text-4xl">
             The difference is in how we work.
           </h2>
 

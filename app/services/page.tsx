@@ -91,10 +91,7 @@ export default function ServicesPage() {
       <section id="properties" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
         <div className="grid gap-10 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
-            <span className="text-xs font-medium uppercase tracking-widest text-gold-deep">
-              Division One
-            </span>
-            <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
+            <h2 className="font-serif text-3xl sm:text-4xl">
               Aspirio Properties
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/65">
@@ -124,10 +121,7 @@ export default function ServicesPage() {
       <section id="medicals" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
         <div className="grid gap-10 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
-            <span className="text-xs font-medium uppercase tracking-widest text-gold-deep">
-              Division Two
-            </span>
-            <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
+            <h2 className="font-serif text-3xl sm:text-4xl">
               Aspirio Medicals
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/65">
