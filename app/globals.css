@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf8f3;
+  --foreground: #1a1712;
+  --ink: #14120e;
+  --cream: #faf8f3;
+  --cream-deep: #f1ecdf;
+  --gold: #b8912f;
+  --gold-light: #e8cd82;
+  --gold-deep: #8a6d1f;
+  --hairline: #e2dac4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-deep: var(--gold-deep);
+  --color-hairline: var(--hairline);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
+.gold-text {
+  background: linear-gradient(115deg, var(--gold-deep), var(--gold-light) 45%, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-rule {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  height: 1px;
+}
