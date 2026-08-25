@@ -59,9 +59,6 @@ export const metadata: Metadata = {
       "Two divisions, one standard of excellence: Aspirio Properties and Aspirio Medicals.",
     images: ["/logo.jpg"],
   },
-  icons: {
-    icon: "/logo.jpg",
-  },
   alternates: {
     canonical: siteUrl,
   },
