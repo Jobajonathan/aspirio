@@ -22,7 +22,7 @@ export default function AboutPage() {
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-light">
             About Us
           </p>
-          <h1 className="mt-4 font-serif text-4xl sm:text-5xl">
+          <h1 className="mt-4 font-serif text-4xl italic sm:text-5xl">
             Built on trust, since 2015.
           </h1>
         </div>
@@ -32,18 +32,20 @@ export default function AboutPage() {
       <section className="mx-auto max-w-4xl px-6 py-16 sm:px-10">
         <h2 className="font-serif text-2xl">Our Story</h2>
         <p className="mt-4 text-sm leading-relaxed text-ink/75">
-          Aspirio Limited is a Nigerian company, incorporated on 13 July
-          2015 and registered under RC 1274067. From that foundation, we
-          have grown into two focused divisions — Aspirio Properties and
-          Aspirio Medicals — each built around the same principles of
-          integrity, reliability, and attention to detail.
+          Aspirio Limited was incorporated on 13 July 2015 under RC 1274067,
+          built on a simple idea: people deserve to work with companies
+          that do exactly what they say. From that foundation, we grew
+          into two focused divisions — Aspirio Properties and Aspirio
+          Medicals — each solving a different problem, but held to the
+          same standard of integrity, reliability, and attention to
+          detail.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-ink/75">
-          We believe a company&rsquo;s reputation is earned through
-          consistency: delivering on promises, treating clients and
-          partners with respect, and holding our own work to a high
-          standard, whether that means a property transaction or the
-          supply of medical equipment.
+          A property decision and a hospital equipment order have little
+          in common on the surface. But both demand the same thing from
+          the company on the other side of the table: honesty about what
+          you&rsquo;re getting, and follow-through once the deal is done.
+          That&rsquo;s the standard we hold ourselves to, every time.
         </p>
 
         <div className="mt-10 grid gap-6 border border-hairline bg-cream-deep p-8 sm:grid-cols-2">

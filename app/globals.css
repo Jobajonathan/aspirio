@@ -22,8 +22,8 @@
   --color-gold-light: var(--gold-light);
   --color-gold-deep: var(--gold-deep);
   --color-hairline: var(--hairline);
-  --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-dm-sans);
 }
 
 body {

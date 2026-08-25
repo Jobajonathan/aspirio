@@ -40,9 +40,9 @@ export default function Header() {
 
         <Link
           href="/contact"
-          className="hidden rounded-sm border border-gold/60 px-5 py-2 text-sm tracking-wide text-gold-light transition-colors hover:bg-gold hover:text-ink sm:inline-block"
+          className="hidden rounded-sm border border-gold/60 px-5 py-2 text-sm font-medium tracking-wide text-gold-light transition-colors hover:bg-gold hover:text-ink sm:inline-block"
         >
-          Get in touch
+          Get Started
         </Link>
 
         <MobileNav />
