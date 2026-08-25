@@ -38,35 +38,35 @@ export default function ContactPage() {
       {/* Contact details, editorial row layout */}
       <section className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
         <div className="grid gap-10 border-t border-hairline pt-10 sm:grid-cols-3">
-          <div>
+          <div className="min-w-0">
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Call Us
             </p>
             <a
               href={`tel:${PHONE_HREF}`}
-              className="mt-2 block font-serif text-2xl hover:text-gold-deep"
+              className="mt-2 block break-words font-serif text-xl hover:text-gold-deep sm:text-2xl"
             >
               {PHONE}
             </a>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Email Us
             </p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-2 block font-serif text-2xl hover:text-gold-deep"
+              className="mt-2 block break-words font-serif text-lg hover:text-gold-deep sm:text-xl"
             >
               {EMAIL}
             </a>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Visit Us
             </p>
-            <p className="mt-2 font-serif text-2xl">{ADDRESS}</p>
+            <p className="mt-2 break-words font-serif text-xl sm:text-2xl">{ADDRESS}</p>
           </div>
         </div>
       </section>

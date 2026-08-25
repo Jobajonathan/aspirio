@@ -86,7 +86,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-gold-light/80 hover:text-gold-light"
             >
-              theryters.com
+The Ryters
             </a>
           </p>
         </div>

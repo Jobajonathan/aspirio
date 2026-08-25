@@ -6,26 +6,26 @@ import { WHATSAPP_URL } from "@/lib/contact";
 const trustPoints = [
   { label: "RC 1274067", sub: "CAC Registered" },
   { label: "Est. 2015", sub: "A Decade of Trust" },
-  { label: "2 Divisions", sub: "Properties & Medicals" },
+  { label: "2 Divisions", sub: "Real Estate & Medicals" },
   { label: "Abuja", sub: "Nigerian Owned" },
 ];
 
 const whyAspirio = [
   {
     title: "Integrity First",
-    body: "Every deal, every delivery, every conversation is handled honestly, with nothing hidden and nothing overpromised.",
+    body: "We have turned down deals that did not feel right, because a signature is worth less than a reputation. Every conversation with us can be taken at face value.",
   },
   {
     title: "Two Fields, One Standard",
-    body: "Property and medical equipment are worlds apart, but we hold both divisions to the same standard of care and follow through.",
+    body: "A property sale and a hospital equipment order look nothing alike on paper. But behind both is the same question: can this company be trusted to get it right. We built two divisions around answering yes.",
   },
   {
     title: "Dedicated Support",
-    body: "A real team you can reach, before, during, and after every transaction. No call centres, no runaround.",
+    body: "You will not be passed between departments or left waiting on a ticket number. The person who takes your first call is often the same person who sees things through.",
   },
   {
     title: "Built to Last",
-    body: "Registered since 2015 and still growing. A company that plans for the long term, not the quick sale.",
+    body: "We have been doing this since 2015, long enough to learn that a quick sale is not worth much if the client never comes back. So we do not chase it.",
   },
 ];
 
@@ -34,22 +34,24 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-ink text-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-24 sm:px-10 md:grid-cols-[1.1fr_0.9fr] md:py-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 sm:px-10 sm:py-16 md:grid-cols-[1.1fr_0.9fr] md:py-20">
           <div>
             <p className="inline-block border border-gold/40 px-3 py-1 text-xs font-medium uppercase tracking-[0.25em] text-gold-light">
               RC 1274067 &middot; Trusted Since 2015
             </p>
-            <h1 className="mt-6 font-serif text-4xl leading-[1.1] italic sm:text-5xl md:text-6xl">
-              Property. <span className="gold-text not-italic">Medical Equipment.</span>{" "}
-              One name you can trust.
+            <h1 className="mt-5 font-serif text-3xl leading-[1.15] italic sm:text-4xl md:text-5xl">
+              A home to build your life in.{" "}
+              <span className="gold-text not-italic">
+                Equipment to help save one.
+              </span>
             </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-cream/75">
-              Aspirio Limited puts serious real estate expertise and reliable
-              medical equipment supply under one roof. Whatever you&rsquo;re
-              looking to buy, let, build, or equip, we make it happen,
-              properly.
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream/75 sm:text-base">
+              Behind every property we sell is a family finding their
+              footing. Behind every piece of equipment we supply is a
+              hospital ready to do more for its patients. That is the
+              business we are really in.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-7 flex flex-wrap gap-4">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -59,10 +61,10 @@ export default function Home() {
                 Speak to Us on WhatsApp
               </a>
               <Link
-                href="/services"
+                href="/about"
                 className="rounded-sm border border-gold/50 px-6 py-3 text-sm font-medium tracking-wide text-gold-light transition-colors hover:bg-gold/10"
               >
-                Explore Our Services
+                Read Our Story
               </Link>
             </div>
           </div>
@@ -71,9 +73,9 @@ export default function Home() {
             <Image
               src="/logo.jpg"
               alt="Aspirio Limited"
-              width={340}
-              height={340}
-              className="w-60 rounded-full object-cover shadow-[0_0_80px_-10px_rgba(184,145,47,0.4)] sm:w-80"
+              width={280}
+              height={280}
+              className="w-44 rounded-full object-cover shadow-[0_0_80px_-10px_rgba(184,145,47,0.4)] sm:w-56 md:w-64"
               priority
             />
           </div>
@@ -81,10 +83,10 @@ export default function Home() {
 
         {/* Trust strip */}
         <div className="border-t border-gold/15 bg-ink/60">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 py-10 sm:px-10 md:grid-cols-4">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 py-6 sm:px-10 md:grid-cols-4">
             {trustPoints.map((point) => (
               <div key={point.label}>
-                <p className="font-serif text-2xl text-gold-light sm:text-3xl">
+                <p className="font-serif text-xl text-gold-light sm:text-2xl">
                   {point.label}
                 </p>
                 <p className="mt-1 text-xs uppercase tracking-widest text-cream/55">
@@ -102,8 +104,8 @@ export default function Home() {
         <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-deep">
           What We Do
         </p>
-        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
-          Two divisions. One relentless standard.
+        <h2 className="mt-3 max-w-xl font-serif text-3xl sm:text-4xl">
+          Two moments in life where getting it wrong costs the most.
         </h2>
 
         <div className="mt-16 grid items-center gap-12 md:grid-cols-2">
@@ -111,14 +113,17 @@ export default function Home() {
             <span className="font-serif text-5xl text-gold/30">01</span>
             <h3 className="mt-2 font-serif text-3xl">Aspirio Properties</h3>
             <p className="mt-4 text-sm leading-relaxed text-ink/70">
-              Buying, letting, or developing property in Abuja and beyond
-              shouldn&rsquo;t feel like a gamble. We bring structure,
-              honesty, and real market knowledge to every transaction, so
-              you close with confidence, not crossed fingers.
+              A home is never just a building. It is where a marriage
+              begins, where children learn to walk, where a life takes
+              root. When you come to us for real estate in Abuja, we do
+              not just hand you a listing. We help you picture the years
+              you will spend there, and make sure the numbers, the
+              paperwork, and the promises all hold up long after you move
+              in.
             </p>
             <ul className="mt-6 space-y-3">
               {[
-                "Verified property sales & acquisitions",
+                "Verified real estate sales & acquisitions",
                 "Residential and commercial letting",
                 "End to end development & project management",
                 "Straight talking investment advisory",
@@ -151,10 +156,13 @@ export default function Home() {
             <span className="font-serif text-5xl text-gold/30">02</span>
             <h3 className="mt-2 font-serif text-3xl">Aspirio Medicals</h3>
             <p className="mt-4 text-sm leading-relaxed text-ink/70">
-              Hospitals and clinics can&rsquo;t afford delays or dud
-              equipment. Aspirio Medicals sources and supplies quality
-              medical equipment with the reliability healthcare providers
-              actually need: genuine products, delivered on schedule.
+              Behind every functioning hospital ward is equipment that did
+              not fail when it mattered most. A diagnostic reading that
+              was accurate. A delivery that arrived before the surgery,
+              not after. That is the standard Aspirio Medicals works to,
+              because somewhere on the other end of every order is a
+              patient trusting a stranger&rsquo;s judgment with their
+              life.
             </p>
             <ul className="mt-6 space-y-3">
               {[
@@ -212,11 +220,11 @@ export default function Home() {
       <section className="bg-ink text-cream">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center sm:px-10">
           <h2 className="font-serif text-3xl italic sm:text-4xl">
-            Ready to work with a name you can trust?
+            Your next chapter starts with one conversation.
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm text-cream/70">
-            Tell us what you need, property or medical equipment, and
-            we&rsquo;ll take it from there.
+            Real estate or medical equipment, tell us what you need and we
+            will take it from there.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
