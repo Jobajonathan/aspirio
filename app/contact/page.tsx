@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
+import { EMAIL, PHONE, PHONE_HREF, ADDRESS, WHATSAPP_URL, INSTAGRAM_URL, FACEBOOK_URL } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Aspirio Limited — reach out about Aspirio Properties or Aspirio Medicals via phone, email, or social media.",
+    "Get in touch with Aspirio Limited in Abuja, via WhatsApp, phone, email, or social media, about Aspirio Properties or Aspirio Medicals.",
   alternates: { canonical: "/contact" },
 };
-
-// TODO: replace placeholder email/address with Aspirio Limited's real details.
-const EMAIL = "info@aspiriolimited.com";
-const PHONE = "+234 703 875 2663";
-const ADDRESS = "Lagos, Nigeria";
 
 export default function ContactPage() {
   return (
@@ -24,54 +20,53 @@ export default function ContactPage() {
             Let&rsquo;s talk business.
           </h1>
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream/70">
-            Property or medical equipment — whatever brought you here, our
+            Property or medical equipment, whatever brought you here, our
             team responds quickly and won&rsquo;t waste your time.
           </p>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block rounded-sm bg-gold px-7 py-3.5 text-sm font-semibold tracking-wide text-ink transition-opacity hover:opacity-90"
+          >
+            Speak to Us on WhatsApp
+          </a>
         </div>
         <div className="gold-rule" />
       </section>
 
-      {/* Info cards */}
+      {/* Contact details, editorial row layout */}
       <section className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-        <div className="grid gap-6 sm:grid-cols-3">
-          <div className="border border-hairline bg-cream-deep p-7">
+        <div className="grid gap-10 border-t border-hairline pt-10 sm:grid-cols-3">
+          <div>
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Call Us
             </p>
-            <p className="mt-2 text-sm text-ink/65">
-              Speak to our team directly.
-            </p>
             <a
-              href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="mt-3 block font-serif text-lg hover:text-gold-deep"
+              href={`tel:${PHONE_HREF}`}
+              className="mt-2 block font-serif text-2xl hover:text-gold-deep"
             >
               {PHONE}
             </a>
           </div>
 
-          <div className="border border-hairline bg-cream-deep p-7">
+          <div>
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Email Us
             </p>
-            <p className="mt-2 text-sm text-ink/65">
-              We reply as soon as we can.
-            </p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-3 block font-serif text-lg hover:text-gold-deep"
+              className="mt-2 block font-serif text-2xl hover:text-gold-deep"
             >
               {EMAIL}
             </a>
           </div>
 
-          <div className="border border-hairline bg-cream-deep p-7">
+          <div>
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Visit Us
             </p>
-            <p className="mt-2 text-sm text-ink/65">
-              Come speak to us in person.
-            </p>
-            <p className="mt-3 font-serif text-lg">{ADDRESS}</p>
+            <p className="mt-2 font-serif text-2xl">{ADDRESS}</p>
           </div>
         </div>
       </section>
@@ -102,7 +97,7 @@ export default function ContactPage() {
                     name="name"
                     type="text"
                     required
-                    className="mt-2 w-full border border-hairline bg-white px-4 py-2.5 text-sm outline-none focus:border-gold"
+                    className="mt-2 w-full border-b border-hairline bg-transparent px-1 py-2.5 text-sm outline-none focus:border-gold"
                   />
                 </div>
                 <div>
@@ -114,7 +109,7 @@ export default function ContactPage() {
                     name="email"
                     type="email"
                     required
-                    className="mt-2 w-full border border-hairline bg-white px-4 py-2.5 text-sm outline-none focus:border-gold"
+                    className="mt-2 w-full border-b border-hairline bg-transparent px-1 py-2.5 text-sm outline-none focus:border-gold"
                   />
                 </div>
                 <div>
@@ -126,7 +121,7 @@ export default function ContactPage() {
                     name="message"
                     rows={4}
                     required
-                    className="mt-2 w-full border border-hairline bg-white px-4 py-2.5 text-sm outline-none focus:border-gold"
+                    className="mt-2 w-full border-b border-hairline bg-transparent px-1 py-2.5 text-sm outline-none focus:border-gold"
                   />
                 </div>
                 <button
@@ -143,32 +138,31 @@ export default function ContactPage() {
               <p className="mt-3 text-sm leading-relaxed text-ink/70">
                 See our latest listings, equipment updates, and company news.
               </p>
-              <div className="mt-6 flex flex-col gap-3">
+              <div className="mt-6 space-y-4 border-t border-hairline pt-6">
                 <a
-                  href="https://www.instagram.com/aspiriolimited/"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-hairline bg-white/70 px-5 py-3 text-sm font-medium hover:border-gold hover:text-gold-deep"
+                  className="block font-serif text-lg hover:text-gold-deep"
                 >
-                  Instagram — @aspiriolimited
+                  Instagram (@aspiriolimited)
                 </a>
                 <a
-                  href="https://web.facebook.com/shade.gold.940"
+                  href={FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-hairline bg-white/70 px-5 py-3 text-sm font-medium hover:border-gold hover:text-gold-deep"
+                  className="block font-serif text-lg hover:text-gold-deep"
                 >
                   Facebook
                 </a>
               </div>
 
-              <div className="mt-10 border border-hairline bg-white/70 p-6">
+              <div className="mt-10 border-t border-hairline pt-6">
                 <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
                   Registered Company
                 </p>
                 <p className="mt-2 text-sm text-ink/75">
-                  Aspirio Limited &middot; RC 1274067 &middot; Registered 13
-                  July 2015
+                  Aspirio Limited, RC 1274067, registered 13 July 2015.
                 </p>
               </div>
             </div>

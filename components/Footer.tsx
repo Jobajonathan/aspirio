@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ADDRESS, INSTAGRAM_URL, FACEBOOK_URL, WHATSAPP_URL, PHONE } from "@/lib/contact";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,8 +14,9 @@ export default function Footer() {
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed">
             A Nigerian company operating across property and medical
-            equipment — RC 1274067, registered 13 July 2015.
+            equipment. RC 1274067, registered 13 July 2015.
           </p>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed">{ADDRESS}</p>
         </div>
 
         <div>
@@ -36,7 +38,22 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <a
-                href="https://www.instagram.com/aspiriolimited/"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold-light"
+              >
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href={`tel:${PHONE.replace(/\s/g, "")}`} className="hover:text-gold-light">
+                {PHONE}
+              </a>
+            </li>
+            <li>
+              <a
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold-light"
@@ -46,7 +63,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://web.facebook.com/shade.gold.940"
+                href={FACEBOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold-light"
@@ -59,9 +76,20 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gold/15">
-        <p className="mx-auto max-w-6xl px-6 py-5 text-xs text-cream/50 sm:px-10">
-          © {year} Aspirio Limited. All rights reserved.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between sm:px-10">
+          <p>© {year} Aspirio Limited. All rights reserved.</p>
+          <p>
+            Developed by{" "}
+            <a
+              href="https://theryters.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-light/80 hover:text-gold-light"
+            >
+              theryters.com
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

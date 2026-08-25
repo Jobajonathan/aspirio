@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AccentPanel from "@/components/AccentPanel";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
 const propertyServices = [
   {
     title: "Property Sales & Acquisitions",
-    body: "From first search to signed contract, we handle the process end to end — verified listings, honest advice, no surprises at the finish line.",
+    body: "From first search to signed contract, we handle the process end to end: verified listings, honest advice, no surprises at the finish line.",
   },
   {
     title: "Residential & Commercial Letting",
@@ -19,32 +21,51 @@ const propertyServices = [
   },
   {
     title: "Property Development & Project Management",
-    body: "From concept to completion, we oversee developments with the discipline of a team that answers for every stage — timeline, budget, and build quality.",
+    body: "From concept to completion, we oversee developments with the discipline of a team that answers for every stage: timeline, budget, and build quality.",
   },
   {
     title: "Investment Advisory",
-    body: "Straight-talking guidance on where and how to put your money into Nigerian real estate, backed by real market knowledge rather than sales pressure.",
+    body: "Straight talking guidance on where and how to put your money into Nigerian real estate, backed by real market knowledge rather than sales pressure.",
   },
 ];
 
 const medicalServices = [
   {
     title: "Diagnostic & Clinical Equipment Supply",
-    body: "Genuine, quality-checked equipment for hospitals, clinics, laboratories, and private practices — sourced with your patients' outcomes in mind.",
+    body: "Genuine, quality checked equipment for hospitals, clinics, laboratories, and private practices, sourced with your patients' outcomes in mind.",
   },
   {
     title: "Sourcing for Healthcare Facilities",
-    body: "Tell us what your facility needs and we'll find it — from routine consumables to specialised diagnostic machinery.",
+    body: "Tell us what your facility needs and we'll find it, from routine consumables to specialised diagnostic machinery.",
   },
   {
     title: "Nationwide, Dependable Delivery",
     body: "Equipment that arrives when we say it will. No vague timelines, no chasing us for updates.",
   },
   {
-    title: "Post-Sale Support",
+    title: "Post Sale Support",
     body: "Our relationship doesn't end at delivery. We stay reachable for installation guidance, servicing referrals, and reorders.",
   },
 ];
+
+function ServiceList({ items }: { items: { title: string; body: string }[] }) {
+  return (
+    <div className="mt-10 divide-y divide-hairline border-t border-hairline">
+      {items.map((item, index) => (
+        <div
+          key={item.title}
+          className="grid gap-3 py-8 sm:grid-cols-[80px_1fr_2fr] sm:items-baseline sm:gap-8"
+        >
+          <span className="font-serif text-lg text-gold-deep">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <h3 className="font-serif text-xl">{item.title}</h3>
+          <p className="text-sm leading-relaxed text-ink/70">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function ServicesPage() {
   return (
@@ -60,14 +81,14 @@ export default function ServicesPage() {
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-cream/70">
             Whether you&rsquo;re searching for the right property or the
             right equipment for your facility, Aspirio Limited brings the
-            same discipline, honesty, and follow-through to both.
+            same discipline, honesty, and follow through to both.
           </p>
         </div>
         <div className="gold-rule" />
       </section>
 
       <section id="properties" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="grid gap-10 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
             <span className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Division One
@@ -75,30 +96,24 @@ export default function ServicesPage() {
             <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
               Aspirio Properties
             </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/65">
+              Real estate handled with structure and honesty, because a
+              property decision is too big to leave to chance.
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-ink/65">
-            Real estate handled with structure and honesty — because a
-            property decision is too big to leave to chance.
-          </p>
+          <AccentPanel icon="house" caption="Aspirio Properties" />
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {propertyServices.map((item) => (
-            <div key={item.title} className="border border-hairline bg-cream-deep p-7">
-              <h3 className="font-serif text-lg">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink/70">
-                {item.body}
-              </p>
-            </div>
-          ))}
-        </div>
+        <ServiceList items={propertyServices} />
 
-        <Link
-          href="/contact"
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-9 inline-block rounded-sm bg-ink px-7 py-3 text-sm font-semibold tracking-wide text-gold-light transition-opacity hover:opacity-90"
         >
           Talk to us about a property
-        </Link>
+        </a>
       </section>
 
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
@@ -106,7 +121,7 @@ export default function ServicesPage() {
       </div>
 
       <section id="medicals" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="grid gap-10 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
             <span className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Division Two
@@ -114,30 +129,24 @@ export default function ServicesPage() {
             <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
               Aspirio Medicals
             </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/65">
+              Quality medical equipment, supplied reliably, because
+              healthcare providers can&rsquo;t afford to wait.
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-ink/65">
-            Quality medical equipment, supplied reliably — because
-            healthcare providers can&rsquo;t afford to wait.
-          </p>
+          <AccentPanel icon="cross" caption="Aspirio Medicals" />
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {medicalServices.map((item) => (
-            <div key={item.title} className="border border-hairline bg-cream-deep p-7">
-              <h3 className="font-serif text-lg">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink/70">
-                {item.body}
-              </p>
-            </div>
-          ))}
-        </div>
+        <ServiceList items={medicalServices} />
 
-        <Link
-          href="/contact"
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-9 inline-block rounded-sm bg-ink px-7 py-3 text-sm font-semibold tracking-wide text-gold-light transition-opacity hover:opacity-90"
         >
           Talk to us about equipment
-        </Link>
+        </a>
       </section>
 
       <section className="bg-ink text-cream">

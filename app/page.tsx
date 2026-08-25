@@ -1,29 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
+import AccentPanel from "@/components/AccentPanel";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const trustPoints = [
-  { label: "RC 1274067", sub: "CAC-Registered" },
+  { label: "RC 1274067", sub: "CAC Registered" },
   { label: "Est. 2015", sub: "A Decade of Trust" },
   { label: "2 Divisions", sub: "Properties & Medicals" },
-  { label: "Nigerian-Owned", sub: "Built for Nigeria" },
+  { label: "Abuja", sub: "Nigerian Owned" },
 ];
 
 const whyAspirio = [
   {
     title: "Integrity First",
-    body: "Every deal, every delivery, every conversation — handled honestly, with nothing hidden and nothing overpromised.",
+    body: "Every deal, every delivery, every conversation is handled honestly, with nothing hidden and nothing overpromised.",
   },
   {
     title: "Two Fields, One Standard",
-    body: "Property and medical equipment are worlds apart, but we hold both divisions to the same standard of care and follow-through.",
+    body: "Property and medical equipment are worlds apart, but we hold both divisions to the same standard of care and follow through.",
   },
   {
     title: "Dedicated Support",
-    body: "A real team you can reach — before, during, and after every transaction. No call centres, no runaround.",
+    body: "A real team you can reach, before, during, and after every transaction. No call centres, no runaround.",
   },
   {
     title: "Built to Last",
-    body: "Registered since 2015 and still growing — a company that plans for the long term, not the quick sale.",
+    body: "Registered since 2015 and still growing. A company that plans for the long term, not the quick sale.",
   },
 ];
 
@@ -44,32 +46,34 @@ export default function Home() {
             <p className="mt-6 max-w-lg text-base leading-relaxed text-cream/75">
               Aspirio Limited puts serious real estate expertise and reliable
               medical equipment supply under one roof. Whatever you&rsquo;re
-              looking to buy, let, build, or equip — we make it happen,
+              looking to buy, let, build, or equip, we make it happen,
               properly.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Link
-                href="/services#properties"
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-sm bg-gold px-6 py-3 text-sm font-semibold tracking-wide text-ink transition-opacity hover:opacity-90"
               >
-                Explore Aspirio Properties
-              </Link>
+                Speak to Us on WhatsApp
+              </a>
               <Link
-                href="/services#medicals"
+                href="/services"
                 className="rounded-sm border border-gold/50 px-6 py-3 text-sm font-medium tracking-wide text-gold-light transition-colors hover:bg-gold/10"
               >
-                Explore Aspirio Medicals
+                Explore Our Services
               </Link>
             </div>
           </div>
 
           <div className="flex justify-center md:justify-end">
             <Image
-              src="/logo.png"
+              src="/logo.jpg"
               alt="Aspirio Limited"
               width={340}
               height={340}
-              className="w-60 object-contain sm:w-80"
+              className="w-60 rounded-full object-cover shadow-[0_0_80px_-10px_rgba(184,145,47,0.4)] sm:w-80"
               priority
             />
           </div>
@@ -93,7 +97,7 @@ export default function Home() {
         <div className="gold-rule" />
       </section>
 
-      {/* Divisions — alternating feature blocks */}
+      {/* Divisions */}
       <section className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
         <p className="text-xs font-medium uppercase tracking-[0.25em] text-gold-deep">
           What We Do
@@ -102,24 +106,22 @@ export default function Home() {
           Two divisions. One relentless standard.
         </h2>
 
-        <div className="mt-16 grid items-center gap-10 md:grid-cols-2">
+        <div className="mt-16 grid items-center gap-12 md:grid-cols-2">
           <div>
-            <span className="text-xs font-medium uppercase tracking-widest text-gold-deep">
-              Division One
-            </span>
+            <span className="font-serif text-5xl text-gold/30">01</span>
             <h3 className="mt-2 font-serif text-3xl">Aspirio Properties</h3>
             <p className="mt-4 text-sm leading-relaxed text-ink/70">
-              Buying, letting, or developing property in Nigeria shouldn&rsquo;t
-              feel like a gamble. We bring structure, honesty, and real
-              market knowledge to every transaction — so you close with
-              confidence, not crossed fingers.
+              Buying, letting, or developing property in Abuja and beyond
+              shouldn&rsquo;t feel like a gamble. We bring structure,
+              honesty, and real market knowledge to every transaction, so
+              you close with confidence, not crossed fingers.
             </p>
             <ul className="mt-6 space-y-3">
               {[
                 "Verified property sales & acquisitions",
                 "Residential and commercial letting",
-                "End-to-end development & project management",
-                "Straight-talking investment advisory",
+                "End to end development & project management",
+                "Straight talking investment advisory",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-ink/80">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
@@ -134,46 +136,32 @@ export default function Home() {
               See what we can do for you &rarr;
             </Link>
           </div>
-          <div className="order-first border border-hairline bg-cream-deep p-10 md:order-last">
-            <p className="font-serif text-xl italic text-ink/85">
-              &ldquo;A property deal is only as good as the people behind
-              it.&rdquo;
-            </p>
-            <p className="mt-3 text-xs uppercase tracking-widest text-gold-deep">
-              The Aspirio Properties approach
-            </p>
+          <div className="order-first md:order-last">
+            <AccentPanel icon="house" caption="Aspirio Properties" />
           </div>
         </div>
 
         <div className="my-20 gold-rule" />
 
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          <div className="border border-hairline bg-cream-deep p-10">
-            <p className="font-serif text-xl italic text-ink/85">
-              &ldquo;Healthcare providers deserve equipment suppliers who
-              show up on time, every time.&rdquo;
-            </p>
-            <p className="mt-3 text-xs uppercase tracking-widest text-gold-deep">
-              The Aspirio Medicals promise
-            </p>
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <AccentPanel icon="cross" caption="Aspirio Medicals" />
           </div>
           <div>
-            <span className="text-xs font-medium uppercase tracking-widest text-gold-deep">
-              Division Two
-            </span>
+            <span className="font-serif text-5xl text-gold/30">02</span>
             <h3 className="mt-2 font-serif text-3xl">Aspirio Medicals</h3>
             <p className="mt-4 text-sm leading-relaxed text-ink/70">
               Hospitals and clinics can&rsquo;t afford delays or dud
               equipment. Aspirio Medicals sources and supplies quality
               medical equipment with the reliability healthcare providers
-              actually need — genuine products, delivered on schedule.
+              actually need: genuine products, delivered on schedule.
             </p>
             <ul className="mt-6 space-y-3">
               {[
                 "Diagnostic & clinical equipment supply",
                 "Sourcing for hospitals, clinics & practitioners",
                 "Dependable delivery, nationwide",
-                "Post-sale support that doesn't disappear",
+                "Post sale support that doesn't disappear",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-ink/80">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
@@ -201,11 +189,17 @@ export default function Home() {
             The difference is in how we work.
           </h2>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            {whyAspirio.map((item) => (
-              <div key={item.title} className="border border-hairline bg-white/70 p-7">
+          <div className="mt-14 divide-y divide-hairline border-t border-hairline">
+            {whyAspirio.map((item, index) => (
+              <div
+                key={item.title}
+                className="grid gap-3 py-8 sm:grid-cols-[80px_1fr_2fr] sm:items-baseline sm:gap-8"
+              >
+                <span className="font-serif text-lg text-gold-deep">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h3 className="font-serif text-xl">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/70">
+                <p className="text-sm leading-relaxed text-ink/70">
                   {item.body}
                 </p>
               </div>
@@ -221,15 +215,25 @@ export default function Home() {
             Ready to work with a name you can trust?
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm text-cream/70">
-            Tell us what you need — property or medical equipment — and
+            Tell us what you need, property or medical equipment, and
             we&rsquo;ll take it from there.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-sm bg-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-ink transition-opacity hover:opacity-90"
-          >
-            Get in touch today
-          </Link>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm bg-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-ink transition-opacity hover:opacity-90"
+            >
+              Speak to Us on WhatsApp
+            </a>
+            <Link
+              href="/contact"
+              className="rounded-sm border border-gold/50 px-8 py-3.5 text-sm font-medium tracking-wide text-gold-light transition-colors hover:bg-gold/10"
+            >
+              Send a Message
+            </Link>
+          </div>
         </div>
       </section>
     </>

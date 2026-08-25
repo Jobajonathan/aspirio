@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { ADDRESS } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Aspirio Limited (RC 1274067) was registered on 13 July 2015. Learn about our leadership team and the two divisions we operate — Aspirio Properties and Aspirio Medicals.",
+    "Aspirio Limited (RC 1274067) was registered on 13 July 2015 and is based in Abuja. Learn about our leadership team and the two divisions we operate: Aspirio Properties and Aspirio Medicals.",
   alternates: { canonical: "/about" },
 };
 
@@ -35,31 +36,36 @@ export default function AboutPage() {
           Aspirio Limited was incorporated on 13 July 2015 under RC 1274067,
           built on a simple idea: people deserve to work with companies
           that do exactly what they say. From that foundation, we grew
-          into two focused divisions — Aspirio Properties and Aspirio
-          Medicals — each solving a different problem, but held to the
-          same standard of integrity, reliability, and attention to
-          detail.
+          into two focused divisions, Aspirio Properties and Aspirio
+          Medicals, each solving a different problem, but held to the same
+          standard of integrity, reliability, and attention to detail.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-ink/75">
           A property decision and a hospital equipment order have little
           in common on the surface. But both demand the same thing from
           the company on the other side of the table: honesty about what
-          you&rsquo;re getting, and follow-through once the deal is done.
+          you&rsquo;re getting, and follow through once the deal is done.
           That&rsquo;s the standard we hold ourselves to, every time.
         </p>
 
-        <div className="mt-10 grid gap-6 border border-hairline bg-cream-deep p-8 sm:grid-cols-2">
+        <div className="mt-12 grid gap-8 border-t border-hairline pt-10 sm:grid-cols-3">
           <div>
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Registration Number
             </p>
-            <p className="mt-1 font-serif text-lg">RC 1274067</p>
+            <p className="mt-2 font-serif text-xl">RC 1274067</p>
           </div>
           <div>
             <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
               Registration Date
             </p>
-            <p className="mt-1 font-serif text-lg">13 July 2015</p>
+            <p className="mt-2 font-serif text-xl">13 July 2015</p>
+          </div>
+          <div>
+            <p className="text-xs font-medium uppercase tracking-widest text-gold-deep">
+              Head Office
+            </p>
+            <p className="mt-2 font-serif text-xl">{ADDRESS}</p>
           </div>
         </div>
       </section>
@@ -72,28 +78,16 @@ export default function AboutPage() {
             strategy and governance.
           </p>
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="mt-8 grid gap-x-8 gap-y-6 border-t border-hairline pt-8 sm:grid-cols-2">
             {leadership.map((person) => (
-              <li
-                key={person.name}
-                className="flex items-center gap-4 border border-hairline bg-white/70 p-5"
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink font-serif text-sm text-gold-light">
-                  {person.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .slice(0, 2)
-                    .join("")}
-                </span>
-                <div>
-                  <p className="font-medium text-ink">{person.name}</p>
-                  <p className="text-xs uppercase tracking-widest text-gold-deep">
-                    {person.role}
-                  </p>
-                </div>
-              </li>
+              <div key={person.name} className="flex items-baseline justify-between gap-4 border-b border-hairline pb-4">
+                <p className="font-serif text-lg text-ink">{person.name}</p>
+                <p className="shrink-0 text-xs uppercase tracking-widest text-gold-deep">
+                  {person.role}
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
     </>

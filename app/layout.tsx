@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Aspirio Limited",
   },
   description:
-    "Aspirio Limited is a Nigerian company operating across two divisions — Aspirio Properties, offering property sales, letting and development, and Aspirio Medicals, supplying quality medical equipment.",
+    "Aspirio Limited is an Abuja based Nigerian company operating across two divisions: Aspirio Properties, offering property sales, letting and development, and Aspirio Medicals, supplying quality medical equipment.",
   keywords: [
     "Aspirio Limited",
     "Aspirio Properties",
@@ -42,10 +42,10 @@ export const metadata: Metadata = {
     siteName: "Aspirio Limited",
     title: "Aspirio Limited | Property & Medical Equipment",
     description:
-      "Two divisions, one standard of excellence — Aspirio Properties and Aspirio Medicals.",
+      "Two divisions, one standard of excellence: Aspirio Properties and Aspirio Medicals.",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo.jpg",
         width: 1080,
         height: 1080,
         alt: "Aspirio Limited",
@@ -56,11 +56,11 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Aspirio Limited",
     description:
-      "Two divisions, one standard of excellence — Aspirio Properties and Aspirio Medicals.",
-    images: ["/logo.png"],
+      "Two divisions, one standard of excellence: Aspirio Properties and Aspirio Medicals.",
+    images: ["/logo.jpg"],
   },
   icons: {
-    icon: "/logo.png",
+    icon: "/logo.jpg",
   },
   alternates: {
     canonical: siteUrl,
@@ -72,9 +72,16 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Aspirio Limited",
   url: siteUrl,
-  logo: `${siteUrl}/logo.png`,
+  logo: `${siteUrl}/logo.jpg`,
   taxID: "RC 1274067",
   foundingDate: "2015-07-13",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "NICON Insurance Plaza",
+    addressLocality: "Abuja",
+    addressCountry: "NG",
+  },
+  telephone: "+234 703 875 2663",
   sameAs: [
     "https://www.instagram.com/aspiriolimited/",
     "https://web.facebook.com/shade.gold.940",

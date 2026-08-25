@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const links = [
   { href: "/", label: "Home" },
@@ -14,11 +15,11 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/logo.png"
+            src="/logo.jpg"
             alt="Aspirio Limited"
             width={44}
             height={44}
-            className="h-10 w-10 object-contain"
+            className="h-10 w-10 rounded-full object-cover"
             priority
           />
           <span className="font-serif text-lg tracking-wide">
@@ -38,12 +39,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link
-          href="/contact"
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden rounded-sm border border-gold/60 px-5 py-2 text-sm font-medium tracking-wide text-gold-light transition-colors hover:bg-gold hover:text-ink sm:inline-block"
         >
-          Get Started
-        </Link>
+          Speak to Us
+        </a>
 
         <MobileNav />
       </div>
@@ -71,6 +74,14 @@ function MobileNav() {
             {link.label}
           </Link>
         ))}
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-1 border-t border-gold/20 px-4 py-2 text-sm text-gold-light"
+        >
+          Speak to Us
+        </a>
       </nav>
     </details>
   );
